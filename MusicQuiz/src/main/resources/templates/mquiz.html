@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
-<body class="bg-secondary">
+<body class="bg-white">
 <nav class="navbar sticky-top navbar-light bg-light">
     <a class="navbar-brand" href="#">Music Quiz : Song Number 1/5</a>
 </nav>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-6 form-group">
                             <label>data od?</label>
-                            <input type="datetime-local" class="form-control" th:field="*{from}">
+                            <input type="datetime-local" class="form-control" th:field="*{since}">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>data do</label>
@@ -55,14 +55,14 @@
         <div class="col">
             <div >
                 <div>
-                    <a href="/play" class="button">Play Sound</a>
+                    <a href="/play" class="btn btn-warning"  style=" font-size: 40px;width: 300px;height: 300px;color:white; background-color: rgba(153,50,204)">Play Sound</a>
 
                 </div>
             </div>
         </div>
     </div>
 
-
+</div>
 
 
 

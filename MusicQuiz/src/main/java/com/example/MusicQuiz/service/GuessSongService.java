@@ -16,8 +16,8 @@ public class GuessSongService {
         Scanner scanner = new Scanner(System.in);
         User user = new User();
         List<Music> musicList = new ArrayList<>();
-        musicList.add(new Music("American Idots","Green Day","Niewiem", MusicGenre.ROCK, LocalDate.of(200,9,11),"/path"));
-              musicList.add(  new Music("Niebieskie swiatko","Maffia gang","nieznam",MusicGenre.RAP,LocalDate.of(2018,9,11),"/path2"));
+        musicList.add(new Music("American Idots","Green Day","Niewiem","Rock", LocalDate.of(200,9,11),"/path"));
+              musicList.add(  new Music("Niebieskie swiatko","Maffia gang","nieznam","RAP",LocalDate.of(2018,9,11),"/path2"));
 
         for (int i = 0; i < musicList.size(); i++) {
             System.out.println("piosenka nr" + (i+1));
@@ -42,7 +42,7 @@ public class GuessSongService {
             }
             System.out.println("podaj gatunek muzyczny z listy");
             String gatunek = scanner.nextLine();
-            if (gatunek.equals(musicList.get(i).getMusicGenre().name())){
+            if (gatunek.equals(musicList.get(i).getMusicGenre())){
                 suma++;
                 System.out.println(true);
             }
