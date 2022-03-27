@@ -11,29 +11,36 @@ import java.util.stream.Collectors;
 
 @Data
 public class User {
-    private String email;
-    private String name;
-    private String lastName;
-    private int age;
-    private int SumForEachSong;
-   private HashMap<Integer,Music> forEachSongOrMovie;
+    private String login;
+
+   private HashMap<Integer,Integer> forEachSongOrMovie;
    private int pointsForQuest;
+   private final int  addForMax =3;
+
 
 
 
     public User() {
-setToZero();
+        this.forEachSongOrMovie = new HashMap<>();
+        setToZero();
+
     }
 
     public void setToZero(){
-        for (Map.Entry<Integer, Music> entry : forEachSongOrMovie.entrySet()) {
-          forEachSongOrMovie.put(0,null);
+        for (Map.Entry<Integer, Integer> entry : forEachSongOrMovie.entrySet()) {
+          forEachSongOrMovie.put(0,0);
         }
     }
-    public void IncreseForEachSong(int index){
-        for (Map.Entry<Integer, Music> entry : forEachSongOrMovie.entrySet()) {
-            forEachSongOrMovie.put()
-        }
+    public void IncreseForEachSong(int index,int suma){
+       forEachSongOrMovie.put(index,suma);
+    }
+    public void countPunktacja(){
+      this.pointsForQuest =forEachSongOrMovie.entrySet().stream().mapToInt(e ->e.getValue()).sum();
+    }
+    public void AddIfMax(){
+        long count = forEachSongOrMovie.entrySet().stream().filter(e -> e.getValue() == 5).count();
+        pointsForQuest += addForMax* count;
+
     }
 
 }
